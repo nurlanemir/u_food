@@ -22,6 +22,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'cucumber-rails', require: false
+  gem 'coveralls', require: false
   gem 'database_cleaner'
   gem 'launchy'
 end
