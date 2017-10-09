@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem "haml-rails", "~> 1.0"
 gem 'acts_as_shopping_cart'
 gem 'jquery-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 group :development, :test do
   gem 'pry-byebug'

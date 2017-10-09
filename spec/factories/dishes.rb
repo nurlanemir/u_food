@@ -4,7 +4,5 @@ FactoryGirl.define do
     description 'MyText'
     price 1
     pic_url 'MyString'
-    restaurant 'MyString'
-    category 'MyString'
   end
 end

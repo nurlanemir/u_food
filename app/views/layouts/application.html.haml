@@ -8,6 +8,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %script(src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initiateMap" async defer)
   %body
-    - if flash[:notice]
-      .notice= flash[:notice]
-    = yield
+    .container
+      - if flash[:notice]
+        .notice= flash[:notice]
+      = yield

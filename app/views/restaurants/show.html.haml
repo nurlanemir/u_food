@@ -4,9 +4,14 @@
   (
   = link_to "Show cart" , cart_path(@cart)
   )
-    
+
 %p= @restaurant.name
 %p= @restaurant.address
+
+.btn-group{"aria-label" => "Basic example", :role => "group"}
+  - @category.each do |section|
+    = link_to section.name, restaurant_path(section_id: section.id), class: 'btn btn-secondary'
+
 - @dishes.each do |dish|
   %p
     Dish:
@@ -14,12 +19,6 @@
   %p
     Description:
     = dish.description
-  %p
-    Category:
-    = dish.category
-  %p
-    Restaurant:
-    = dish.restaurant
   %p
     Price:
     = dish.price
