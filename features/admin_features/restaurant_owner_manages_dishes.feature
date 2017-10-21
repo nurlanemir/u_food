@@ -12,12 +12,13 @@ Feature: Restaurant owner can edit a dish
     And the following restaurants with associations exist
       | name    | address   | description         | res_category_name | menu_name | restaurant_owner         |
       | My Thai | Stockholm | Some hip thai place | Thai              | Lunch     | mythai_owner@example.com |
-      | My Mex  | Stockholm | Mexican tacos       | Mexican           | Lunch     | mymex_owner@example.com  |
+      | My Mex  | Stockholm | Mexican tacos       | Mexican           | Dinner    | mymex_owner@example.com  |
 
     Given the following dishes exists
-      | name        | description         | price | pic_url               | dish_category |menu_name    |
-      | Sushi rolls | Tasty Japanese food | 10    | https://goo.gl/fH7P5F | Main          |Lunch        |
-      | Dumplings   | Tasty Japanese food | 15    | https://goo.gl/qKCyL5 | Main          |Lunch        |
+      | name        | description         | price | pic_url               | dish_category | menu_name | restaurant |
+      | Sushi rolls | Tasty Japanese food | 10    | https://goo.gl/fH7P5F | Main          | Lunch     | My Thai    |
+      | Dumplings   | Tasty Japanese food | 15    | https://goo.gl/qKCyL5 | Main          | Lunch     | My Thai    |
+      | Tacos       | Tasty Mexican food  | 12    | https://goo.gl/qKCyL5 | Main          | Dinner    | My Mex     |
 
     And I am logged in to AA as "mythai_owner@example.com"
     And I go to the dashboard
@@ -28,7 +29,9 @@ Feature: Restaurant owner can edit a dish
     And I fill in "Name" with "Sushi"
     And I fill in "Description" with "I really cant come up with some boring description"
     And I fill in "Price" with "23"
-    And I fill in "Pic url" with "https://goo.gl/qKCyL5"
+    And I fill in "Picture URL" with "https://goo.gl/qKCyL5"
+    And I select "My Thai" from dish dropdown
+    And I select "Lunch" from menu line list
     And I select "Main" from dish category dropdown
     Then I click "Create Dish"
     And I should see "Dish was successfully created."
@@ -48,3 +51,7 @@ Feature: Restaurant owner can edit a dish
     When I click "Delete" for "Sushi rolls" dish
 #    And I click ok on alert box
     Then I should see "Dish was successfully destroyed."
+
+  Scenario: My Thai owner cant see My Mex dishes
+    Given I click "Dishes"
+    Then I should not see "Tacos"

@@ -14,5 +14,5 @@ class Ability
       can :manage, Dish, restaurant_id: admin.restaurants.ids
       can :create, Dish
     end
-    end
   end
+end

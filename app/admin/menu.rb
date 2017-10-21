@@ -6,20 +6,20 @@ ActiveAdmin.register Menu do
     selectable_column
     id_column
     column :name, sortable: :name
-    column :restaurant_id, sortable: :restaurant_id
+    column :restaurant, sortable: :restaurant
     actions
   end
 
   filter :name
-  filter :restaurant_id
+  filter :restaurant, as: :select, collection: proc{ current_admin_user.restaurants }
 
   form do |f|
     f.inputs do
       f.input :name
       if current_admin_user.super_admin?
-        f.input :restaurant_id, as: :select, collection: Restaurant.all.select { |t| [t.name] }
+        f.input :restaurant_id, as: :select, collection: Restaurant.all.select { |r| [r.name] }
       else
-        f.input :restaurant_id, as: :select, collection: Restaurant.all.select { |t| [t.name] if current_admin_user.restaurants.ids.any? {|id| id == t.id } }
+        f.input :restaurant_id, as: :select, collection: Restaurant.all.select { |r| [r.name] if current_admin_user.restaurants.ids.any? {|id| id == r.id } }
       end
     end
     f.actions

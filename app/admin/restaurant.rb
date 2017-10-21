@@ -21,7 +21,7 @@ ActiveAdmin.register Restaurant do
   filter :name
   filter :address
   filter :restaurant_category
-  filter :admin_user, collection: proc {(AdminUser.all).map{|c| [c.email, c.id]}}, if: proc { authorized? :manage }
+  filter :admin_user, collection: proc {(AdminUser.all).map {|c| [c.email, c.id]}}, if: proc {authorized? :manage}
   filter :description
   filter :pic_url
 

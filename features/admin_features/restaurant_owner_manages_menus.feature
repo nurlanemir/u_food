@@ -12,7 +12,7 @@ Feature: Restaurant owner can edit his menu
     And the following restaurants with associations exist
       | name    | address   | description         | res_category_name | menu_name | restaurant_owner         |
       | My Thai | Stockholm | Some hip thai place | Thai              | Lunch     | mythai_owner@example.com |
-      | My Mex  | Stockholm | Mexican tacos       | Mexican           | Lunch    | mymex_owner@example.com  |
+      | My Mex  | Stockholm | Mexican tacos       | Mexican           | Lunch     | mymex_owner@example.com  |
 
     And I am logged in to AA as "mythai_owner@example.com"
     And I go to the dashboard

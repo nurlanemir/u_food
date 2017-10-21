@@ -89,3 +89,14 @@ Given("{string} has an owner {string}") do |restaurant_name, restaurant_owner_em
   restaurant_owner = AdminUser.find_by(email: restaurant_owner_email)
   restaurant.update_attributes(admin_user: restaurant_owner)
 end
+
+Then("I select {string} from dish dropdown") do |option|
+  select option, from: "dish[restaurant_id]"
+end
+
+Then("I select {string} from menu line list") do |option|
+  # select option, from: "dish[menu_lines_ids][]"
+  within(:css, "#dish_menu_line_ids") do
+    select option
+  end
+end

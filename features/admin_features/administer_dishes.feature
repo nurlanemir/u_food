@@ -20,7 +20,7 @@ Feature: Admin can administer dishes
     And I fill in "Name" with "Sushi"
     And I fill in "Description" with "I really cant come up with some boring description"
     And I fill in "Price" with "23"
-    And I fill in "Pic url" with "https://goo.gl/qKCyL5"
+    And I fill in "Picture URL" with "https://goo.gl/qKCyL5"
     And I select "Main" from dish category dropdown
     Then I click "Create Dish"
     And I should see "Dish was successfully created."
