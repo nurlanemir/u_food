@@ -25,6 +25,7 @@ gem 'faker'
 gem 'cancancan'
 gem 'simple_form'
 gem 'stripe-rails'
+gem 'rack-cors', require: 'rack/cors'
 
 
 group :development, :test do
