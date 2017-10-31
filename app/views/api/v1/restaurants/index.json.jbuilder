@@ -7,6 +7,8 @@ json.data do
         json.restaurant_name restaurant.name
         json.restaurant_address restaurant.address
         json.restaurant_description restaurant.description
+        json.restaurant_latitude restaurant.latitude
+        json.restaurant_longitude restaurant.longitude
       end
     end
   end

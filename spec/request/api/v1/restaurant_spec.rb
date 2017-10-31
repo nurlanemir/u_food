@@ -13,18 +13,20 @@ RSpec.describe 'Restaurant', type: :request do
       get '/api/v1/restaurants'
 
       expected_response = {
-          'data' => {
-        'restaurant_categories'=> [
+        'data' => {
+          'restaurant_categories'=> [
             {
-                'restaurant_category_name'=> 'Thai food',
-                'restaurant_category_description'=> 'Thai food',
-                'restaurants'=> [
-                    {
-                        'restaurant_name'=> 'My Thai',
-                        'restaurant_address'=> 'street 1',
-                        'restaurant_description'=> 'boring food'
-                    }
-                ]
+              'restaurant_category_name'=> 'Thai food',
+              'restaurant_category_description'=> 'Thai food',
+              'restaurants'=> [
+                {
+                  'restaurant_name'=> 'My Thai',
+                  'restaurant_address'=> 'street 1',
+                  'restaurant_description'=> 'boring food',
+                  'restaurant_latitude'=>33.7353997,
+                  'restaurant_longitude'=>73.0781967
+                }
+              ]
             }
           ]
         }
