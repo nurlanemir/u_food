@@ -8,7 +8,6 @@ RSpec.describe 'Restaurant', type: :request do
     let!(:restaurant) { FactoryGirl.create(:restaurant, name: 'My Thai', address: 'street 1', description: 'boring food', latitude: 33.7353997, longitude: 73.0781967, restaurant_category_id: restaurant_category.id) }
 
     it 'returns collection of restaurants' do
-      # restaurant.update(restaurant_category_id: restaurant_category.id)
 
       get '/api/v1/restaurants'
 
@@ -25,7 +24,7 @@ RSpec.describe 'Restaurant', type: :request do
 
 
 
-          expect(response.status).to eq 200
+      expect(response.status).to eq 200
       expect(response_json).to eq expected_response
     end
   end
