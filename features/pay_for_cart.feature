@@ -18,9 +18,9 @@ Feature: Restaurant owner can get payment for order
       | Yappi | Hamngatan 37 111 53 Stockholm | Some hip thai place | Japanese          | Lunch     |
 
     And the following dishes exists
-      | name        | description         | price | pic_url               | dish_category | menu_name |
-      | Sushi rolls | Tasty Japanese food | 10    | https://goo.gl/fH7P5F | Main          | Lunch     |
-      | Dumplings   | Tasty Japanese food | 15    | https://goo.gl/qKCyL5 | Main          | Lunch     |
+      | name        | description         | price | image    | dish_category | menu_name |
+      | Sushi rolls | Tasty Japanese food | 10    | kfc.jpeg | Main          | Lunch     |
+      | Dumplings   | Tasty Japanese food | 15    | kfc.jpeg | Main          | Lunch     |
 
     And "1" "Sushi rolls" is added to my cart
     And "2" "Dumplings" is added to my cart

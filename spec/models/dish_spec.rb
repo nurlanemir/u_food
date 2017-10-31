@@ -5,19 +5,26 @@ RSpec.describe Dish, type: :model do
     it {is_expected.to have_db_column :name}
     it {is_expected.to have_db_column :description}
     it {is_expected.to have_db_column :price}
-    it {is_expected.to have_db_column :pic_url}
   end
 
   describe 'Validations' do
     it {is_expected.to validate_presence_of :name}
     it {is_expected.to validate_presence_of :description}
     it {is_expected.to validate_presence_of :price}
-    it {is_expected.to validate_presence_of :pic_url}
   end
 
   describe 'Associations' do
     it {is_expected.to have_many(:menu_lines)}
     it {is_expected.to have_many(:menus).through(:menu_lines)}
+  end
+
+  describe 'Attachment' do
+    it { is_expected.to have_attached_file :image}
+
+    it { is_expected.to have_db_column :image_file_name}
+    it { is_expected.to have_db_column :image_content_type}
+    it { is_expected.to have_db_column :image_file_size}
+    it { is_expected.to have_db_column :image_updated_at}
   end
 
   describe 'Factory' do
