@@ -1,15 +1,10 @@
-json.data do
-  json.restaurants @restaurants do |restaurant|
-    json.restaurant_name restaurant.name
-    json.restaurant_address restaurant.address
-    json.restaurant_description restaurant.description
-    json.restaurant_latitude restaurant.latitude
-    json.restaurant_longitude restaurant.longitude
-    json.restaurant_categories @categories do |category|
-      if restaurant.restaurant_category_id == category.id
-        json.restaurant_category_name category.name
-        json.restaurant_category_description category.description
-      end
-    end
-  end
+json.restaurants @restaurants do |restaurant|
+  json.id restaurant.id
+  json.name restaurant.name
+  json.address restaurant.address
+  json.description restaurant.description
+  json.latitude restaurant.latitude
+  json.longitude restaurant.longitude
+  json.category_name restaurant.restaurant_category.name
+  json.category_description restaurant.restaurant_category.description
 end
