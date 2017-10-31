@@ -13,8 +13,8 @@ Feature: User can rate restaurant
       | example@example.com | password           |
 
     Given the following restaurants with associations exist
-      | name    | address    |  description          | res_category_name | menu_name    |
-      | Yappi   | Stockholm  |  Some hip thai place  | Japanese          | Lunch        |
+      | name  | address   | description         | res_category_name | menu_name |
+      | Yappi | Stockholm | Some hip thai place | Japanese          | Lunch     |
     Then I navigate to the index page
     And I see the navbar
     And I click "Japanese"

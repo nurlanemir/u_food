@@ -14,7 +14,7 @@ ActiveAdmin.register Restaurant do
     column :restaurant_category, sortable: :restaurant_category
     column :admin_user, sortable: :admin_user if authorized? :manage
     column :description, sortable: :description
-    column :pic_url
+    column :image
     actions
   end
 
@@ -23,7 +23,7 @@ ActiveAdmin.register Restaurant do
   filter :restaurant_category
   filter :admin_user, collection: proc {(AdminUser.all).map {|c| [c.email, c.id]}}, if: proc {authorized? :manage}
   filter :description
-  filter :pic_url
+  filter :image
 
   form do |f|
     f.inputs do
@@ -31,7 +31,7 @@ ActiveAdmin.register Restaurant do
       f.input :address
       f.input :restaurant_category
       f.input :description
-      f.input :pic_url
+      f.input :image
     end
     f.actions
   end

@@ -9,8 +9,8 @@ Feature: View a restaurant page
       | Thai | Thai food   |
 
     And the following restaurants exist
-      | name    | address   | restaurant_category | description         |
-      | My Thai | Stockholm | Thai                | Some hip thai place |
+      | name    | address   | restaurant_category | description         | image           |
+      | My Thai | Stockholm | Thai                | Some hip thai place | restaurant.jpeg |
 
     Then I navigate to the index page
 
@@ -20,3 +20,4 @@ Feature: View a restaurant page
     Then I should see "My Thai"
     And I should see "Stockholm"
     And I should see "Some hip thai place"
+    And I should see "restaurant.jpeg" image
