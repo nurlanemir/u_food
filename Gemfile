@@ -25,6 +25,7 @@ gem 'faker'
 gem 'cancancan'
 gem 'simple_form'
 gem 'stripe-rails'
+gem 'rack-cors', require: 'rack/cors'
 gem 'aws-sdk', '~> 2.10', '>= 2.10.27'
 gem 'paperclip', '~> 5.0.0'
 

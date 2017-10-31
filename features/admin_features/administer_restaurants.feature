@@ -5,9 +5,9 @@ Feature: Admin can administer restaurants
 
   Background:
     Given the following restaurants with associations exist
-      | name    | address   | description         | res_category_name | menu_name |
-      | My Thai | Stockholm | Some hip thai place | Thai              | Lunch     |
-      | My Mex  | Stockholm | Mexican tacos       | Mexican           | Lunch     |
+      | name    | address   | description         | res_category_name | menu_name | image           |
+      | My Thai | Stockholm | Some hip thai place | Thai              | Lunch     | restaurant.jpeg |
+      | My Mex  | Stockholm | Mexican tacos       | Mexican           | Lunch     | restaurant.jpeg |
 
     And The following admins exist
       | email             | password | super_admin |
@@ -22,9 +22,15 @@ Feature: Admin can administer restaurants
     And I fill in "Name" with "The New Thai Restaurant"
     And I fill in "Address" with "Street 1"
     And I fill in "Description" with "I really cant come up with some boring description"
+    And I add image "restaurant.jpeg"
     And I select "Thai" from restaurant category dropdown
     Then I click "Create Restaurant"
     And I should see "Restaurant was successfully created."
+    And I should see "restaurant.jpeg" image
+    And I should see the text "The New Thai Restaurant"
+    And I should see the text "Street 1"
+    And I should see the text "I really cant come up with some boring description"
+    Then show me the page
 
   Scenario: Admin updates restaurant
     Given I click "Restaurants"

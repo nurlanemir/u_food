@@ -103,3 +103,7 @@ end
 And(/^I add image "([^"]*)"$/) do |file_name|
   attach_file('dish_image', Rails.root + "spec/fixtures/#{file_name}")
 end
+
+And(/^I add image "([^"]*)"$/) do |file_name|
+  attach_file('restaurant_image', Rails.root + "spec/fixtures/#{file_name}")
+end
