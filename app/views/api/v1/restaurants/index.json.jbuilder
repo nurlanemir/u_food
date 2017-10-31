@@ -6,7 +6,7 @@ json.data do
       if restaurant.restaurant_category_id == category.id
         json.restaurant_name restaurant.name
         json.restaurant_address restaurant.address
-        json.restaurant_decription restaurant.description
+        json.restaurant_description restaurant.description
       end
     end
   end
