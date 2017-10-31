@@ -1,6 +1,6 @@
 ActiveAdmin.register Restaurant do
 
-  permit_params :name, :address, :description, :latitude, :longitude, :restaurant_category, :admin_user, :pic_url
+  permit_params :name, :address, :description, :latitude, :longitude, :restaurant_category, :admin_user, :image
 
   before_create do |restaurant|
     restaurant.admin_user = current_admin_user
@@ -34,5 +34,15 @@ ActiveAdmin.register Restaurant do
       f.input :image
     end
     f.actions
+  end
+  show do
+    attributes_table do
+      row :name
+      row :description
+      row :address
+      row :image do |ad|
+        image_tag ad.image.url
+      end
+    end
   end
 end
