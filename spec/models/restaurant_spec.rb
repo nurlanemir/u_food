@@ -24,6 +24,15 @@ RSpec.describe Restaurant, type: :model do
       it { is_expected.to have_many(:menus) }
   end
 
+  describe 'Attachment' do
+    it { is_expected.to have_attached_file :image}
+
+    it { is_expected.to have_db_column :image_file_name}
+    it { is_expected.to have_db_column :image_content_type}
+    it { is_expected.to have_db_column :image_file_size}
+    it { is_expected.to have_db_column :image_updated_at}
+  end
+
   describe 'class methods' do
     let!(:restaurants) { 3.times {FactoryGirl.create(:restaurant)} }
     describe '#for_markers' do

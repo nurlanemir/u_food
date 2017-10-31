@@ -3,7 +3,7 @@
     %h1.logo= @restaurant.name
     .col-md-5
       .restaurant_pic
-        = image_tag("#{@restaurant.pic_url}")
+        = image_tag("#{@restaurant.image.url}")
     .col-md-7
       %h2.address
         = link_to @restaurant.address, ('https://www.google.com/maps/search/?api=1&query=' + @restaurant.latitude.to_s + ',' + @restaurant.longitude.to_s), target: :_blank

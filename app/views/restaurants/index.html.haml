@@ -25,7 +25,7 @@
               = link_to restaurant.name, restaurant_path(restaurant)
             .thumbnail
               = link_to restaurant_path(restaurant) do
-                #{image_tag("#{restaurant.pic_url}")}
+                #{image_tag("#{restaurant.image.url}")}
               .caption
                 .category_name
                   = restaurant.restaurant_category.name
