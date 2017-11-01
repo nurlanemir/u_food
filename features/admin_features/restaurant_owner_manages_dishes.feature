@@ -29,7 +29,7 @@ Feature: Restaurant owner can edit a dish
     And I fill in "Name" with "Sushi"
     And I fill in "Description" with "I really cant come up with some boring description"
     And I fill in "Price" with "23"
-    And I add image "kfc.jpeg"
+    And I add "dish" "kfc.jpeg"
     And I select "My Thai" from dish dropdown
     And I select "Lunch" from menu line list
     And I select "Main" from dish category dropdown

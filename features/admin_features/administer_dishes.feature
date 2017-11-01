@@ -21,7 +21,7 @@ Feature: Admin can administer dishes
     And I fill in "Description" with "I really cant come up with some boring description"
     And I select "Main" from dish category dropdown
     And I fill in "Price" with "23"
-    And I add image "kfc.jpeg"
+    And I add "dish" "kfc.jpeg"
     Then I click "Create Dish"
     And I should see "Dish was successfully created."
     And I should see the text "Sushi"

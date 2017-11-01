@@ -100,11 +100,6 @@ Then("I select {string} from menu line list") do |option|
   end
 end
 
-And(/^I add "([^"]*)" image$/) do |file_name|
-  attach_file('restaurant_image', Rails.root + "spec/fixtures/#{file_name}")
+And(/^I add "([^"]*)" "([^"]*)"$/) do |model, file_name|
+  attach_file("#{model}_image", Rails.root + "spec/fixtures/#{file_name}")
 end
-
-And(/^I add image "([^"]*)"$/) do |file_name|
-  attach_file('dish_image', Rails.root + "spec/fixtures/#{file_name}")
-end
-
