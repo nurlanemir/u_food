@@ -12,7 +12,7 @@ RSpec.describe 'Restaurant', type: :request do
                                           name: 'My Thai',
                                           address: 'Kungsgatan 1, Stockholm',
                                           description: 'boring food',
-                                          latitude: 33.7353997, longitude: 73.0781967,
+                                          latitude: 59.3360777, longitude: 18.071807,
                                           id: 1,
                                           restaurant_category_id: restaurant_category.id)}
 
